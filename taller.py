@@ -9,16 +9,14 @@ while estudianteCorrecto != estudianteNombre:
     estudianteCorrecto = str(input("Introducir nombre de estudiante=>"))
 else:
     print("Nombre de estudiante correcto!")
-    print()
-    print()
+    print("'''''''''''''''''''''''''''''''''''''''''")
     
 while contraseñaEstudiante != contraseñaCorrecta:
     contraseñaEstudiante = str(input("Introducir contraseña=>"))
 else:
     print("Contraseña correcta!")
 print("Bienvenido estudiante!", estudianteNombre)
-print()
-print()
+print("'''''''''''''''''''''''''''''''''''''''''''''")
 
 # calcular promedio de calificacciones
 # Solicitar las calificaciones al usuario
@@ -28,15 +26,15 @@ Miscalificaciones = input("Ingresa las calificaciones separadas por comas: ")
 calificaciones = [float(calificacion.strip()) for calificacion in Miscalificaciones.split(',')]
 
 # Calcular el promedio
-promedio = sum(calificaciones) / len(calificaciones)
+promedio_calificaciones = sum(calificaciones) / len(calificaciones)
 
-print(f"El promedio de las calificaciones es: {promedio:.2f}")  
+print(f"El promedio de las calificaciones es: {promedio_calificaciones:.2f}")  
     
     
 
 # Ingreso de calificacion del estudiante
 
-tuCalificacion = promedio
+tuCalificacion = promedio_calificaciones
 
 if tuCalificacion >=0 or tuCalificacion <=59:
     print("")
