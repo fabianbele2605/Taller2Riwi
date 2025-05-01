@@ -20,29 +20,45 @@ print("Bienvenido estudiante!", estudianteNombre)
 print()
 print()
 
-# Ingreso de calificacion del estudainte
+# calcular promedio de calificacciones
+# Solicitar las calificaciones al usuario
+Miscalificaciones = input("Ingresa las calificaciones separadas por comas: ")
 
-tuCalificacion = int(input("Ingresar tu calificacion=>"))
+# Convertir la entrada en una lista de números
+calificaciones = [float(calificacion.strip()) for calificacion in Miscalificaciones.split(',')]
 
-if tuCalificacion >0 or tuCalificacion <59:
-    print("Tu calificacion es reprobatoria, estas reprobado!")
+# Calcular el promedio
+promedio = sum(calificaciones) / len(calificaciones)
+
+print(f"El promedio de las calificaciones es: {promedio:.2f}")  
     
-elif tuCalificacion >60 or tuCalificacion <69:
-    print("Tu calificación de aprobación es mínima!")
     
-elif tuCalificacion >70 or tuCalificacion <79:
-    print("Tienes una calificacion buena!")
+
+# Ingreso de calificacion del estudiante
+
+tuCalificacion = promedio
+
+if tuCalificacion >=0 or tuCalificacion <=59:
+    print("")
     
-elif tuCalificacion >80 or tuCalificacion <89:
-    print("Tu calificacion es muy buena!")
+elif tuCalificacion >=60 or tuCalificacion <=69:
+    print("")
     
-elif tuCalificacion >90 or tuCalificacion <100:
-    print("Tu calificacion es excelente!")
+elif tuCalificacion >=70 or tuCalificacion <=79:
+    print("")
     
+elif tuCalificacion >=80 or tuCalificacion <=89:
+    print("")
+    
+elif tuCalificacion >=90 or tuCalificacion <=100:
+    print("")
+    
+# Error si no recono Int o legan str
 else:
     print("Tu calificacion no esta en el rango de (0-100).")
     
 
+# Si aprobo o no aprobo
 
 tuCalificacion = tuCalificacion
 tuCalificacionMinimaParaAprobar = 70
@@ -52,4 +68,9 @@ if tuCalificacion>=tuCalificacionMinimaParaAprobar:
     
 else:
     print(f"No aprobaste, {estudianteNombre}!")
+    
+    
+
+
+    
     
