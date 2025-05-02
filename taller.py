@@ -20,13 +20,13 @@ print("'''''''''''''''''''''''''''''''''''''''''''''")
 
 # calcular promedio de calificacciones
 # Solicitar las calificaciones al usuario
-Miscalificaciones = input("Ingresa las calificaciones separadas por comas: ")
+Miscalificaciones = (input("Ingresa las calificaciones separadas por comas: "))
 
 # Convertir la entrada en una lista de números
-calificaciones = [float(calificacion.strip()) for calificacion in Miscalificaciones.split(',')]
+Listacalificaciones = [float(calif.strip()) for calif in Miscalificaciones.split(',')]
 
 # Calcular el promedio
-promedio_calificaciones = sum(calificaciones) / len(calificaciones)
+promedio_calificaciones = sum(Listacalificaciones) / len(Listacalificaciones)
 
 print(f"El promedio de las calificaciones es: {promedio_calificaciones:.2f}")  
     
@@ -69,6 +69,37 @@ else:
     
     
 
+# verificar las calificaciones que son mayores!
 
-    
-    
+
+while True:
+    cantidad = input("Ingresa la calificaciones para verificar cual es mayor a ella! => ")
+    if cantidad.isdigit():
+        cantidad = int(cantidad)
+        conteo = 0
+        for calificacion in Listacalificaciones:
+           if calificacion > cantidad:
+               conteo += 1
+        print(f"hay una {conteo} calificacion mayor que {cantidad}")
+        break
+    else:
+        print("Ingres un valor correcto!")
+        
+        
+#Verifica cuantas veces se repite la calificacion!
+
+while True:
+    veces_repetida = input("Ingrese la calificacion para ver cuantas veces se repite! ")
+    if veces_repetida.isdigit():
+        veces_repetida = int(veces_repetida)
+        conteo = 0
+        for calificacion in Listacalificaciones:
+            if calificacion < 0 or calificacion > 100:
+                continue
+            if calificacion == veces_repetida:
+                conteo += 1
+        print(f"la calificacion {veces_repetida} sale {conteo} veces")
+        break
+    else:
+        print("Ingresa valores correcto!")
+        
